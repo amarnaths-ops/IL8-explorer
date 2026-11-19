@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IL-8 Mimetic Explorer</title>
+<style>
+  :root { --navy:#0B1F3A; --ink:#444; --card:#E2E8F0; --panel:#F1F5F9; --bg:#fff; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:Inter, system-ui, -apple-system, "Segoe UI", sans-serif; color:var(--navy); background:var(--bg); line-height:1.5; }
+  a { color:inherit; text-decoration:none; }
+  a:focus-visible, button:focus-visible { outline:3px solid #3B82F6; outline-offset:3px; }
+
+  header { background:var(--navy); color:#fff; }
+  .nav { max-width:1440px; margin:0 auto; padding:0 40px; height:80px; display:flex; align-items:center; justify-content:space-between; }
+  .brand { font-size:24px; font-weight:700; }
+  .nav ul { list-style:none; display:flex; gap:48px; font-size:16px; font-weight:600; }
+  .nav ul a:hover { text-decoration:underline; }
+
+  main { max-width:1440px; margin:0 auto; padding:0 80px; }
+  .hero { padding:100px 0 60px; }
+  .hero h1 { font-size:56px; line-height:1.1; font-weight:700; }
+  .hero p { margin-top:16px; font-size:20px; color:var(--ink); max-width:60ch; }
+  .btn { display:inline-block; margin-top:32px; background:var(--navy); color:#fff; padding:16px 32px; border-radius:8px; font-weight:700; }
+  .btn:hover { background:#16335C; }
+
+  .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:40px; }
+  .card { background:var(--card); border-radius:12px; padding:28px; min-height:200px; }
+  .card h2 { font-size:24px; }
+  .card p { margin-top:10px; color:var(--ink); }
+
+  .results { margin:60px 0; background:var(--panel); border-radius:12px; padding:30px; }
+  .results h2 { font-size:28px; margin-bottom:20px; }
+  .table-wrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:560px; }
+  th, td { text-align:left; padding:12px 16px; border-bottom:1px solid #CBD5E1; }
+  th { font-weight:700; }
+  td { color:var(--ink); }
+
+  footer { background:var(--navy); color:#fff; padding:28px 80px; }
+  footer p { max-width:1440px; margin:0 auto; }
+
+  @media (max-width:900px) {
+    main { padding:0 24px; }
+    .nav { padding:0 24px; }
+    .nav ul { gap:20px; }
+    .brand { font-size:18px; }
+    .hero { padding:60px 0 40px; }
+    .hero h1 { font-size:38px; }
+    .cards { grid-template-columns:1fr; gap:20px; }
+    footer { padding:24px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#home">IL-8 Mimetic Explorer</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#explore">Explore</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <h1>IL-8 Mimetic Explorer</h1>
+    <p>Explore sulfated ligands that mimic IL-8 binding.</p>
+    <a class="btn" href="#explore">Explore Now</a>
+  </section>
+
+  <section class="cards" id="about">
+    <article class="card">
+      <h2>Ligands</h2>
+      <p>Sulfated ligands that mimic IL-8 binding.</p>
+    </article>
+    <article class="card">
+      <h2>Docking Results</h2>
+      <p>AutoDock Vina binding affinities.</p>
+    </article>
+    <article class="card">
+      <h2>Interactions</h2>
+      <p>PLIP/PyMOL contact analysis.</p>
+    </article>
+  </section>
+
+  <section class="results" id="explore">
+    <h2>Top Docking Results</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Ligand</th><th>Binding affinity (kcal/mol)</th><th>Key interactions</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Lig-A</td><td>-7.215</td><td>H18, K20, K23, K64, R68</td></tr>
+          <tr><td>Lig-B</td><td>-6.85</td><td>H18, K20, R60, K64, R68</td></tr>
+          <tr><td>Lig-C</td><td>-6.64</td><td>H18, K20, K23, K67, R68</td></tr>
+          <tr><td>Lig-D</td><td>-6.42</td><td>H18, K20, K23, K64</td></tr>
+          <tr><td>Lig-E</td><td>-6.41</td><td>H18, K20, K23, K64, R68</td></tr>
+          <tr><td>Lig-F</td><td>-6.1</td><td>H18, K20, K23</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>IL-8 Mimetic Explorer | IIT Roorkee</p>
+</footer>
+
+</body>
+</html>
